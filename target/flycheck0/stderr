@@ -1,0 +1,97 @@
+   0.154520173s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint: stale: changed "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/lib.rs"
+   0.154547118s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:           (vs) "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/thumbv8m.main-none-eabihf/debug/.fingerprint/lidar_driver-cccb6cf30fc23544/dep-lib-lidar_driver"
+   0.154556969s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:                FileTime { seconds: 1781867829, nanos: 932144873 } < FileTime { seconds: 1781874263, nanos: 982222925 }
+   0.154652849s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint: fingerprint dirty for lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver)/Check { test: false }/TargetInner { ..: lib_target("lidar_driver", ["lib"], "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/lib.rs", Edition2024) }
+   0.154676698s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleItem(ChangedFile { reference: "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/thumbv8m.main-none-eabihf/debug/.fingerprint/lidar_driver-cccb6cf30fc23544/dep-lib-lidar_driver", reference_mtime: FileTime { seconds: 1781867829, nanos: 932144873 }, stale: "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/lib.rs", stale_mtime: FileTime { seconds: 1781874263, nanos: 982222925 } }))
+   0.155182476s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint: fingerprint error for lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver)/Check { test: true }/TargetInner { ..: lib_target("lidar_driver", ["lib"], "/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/lib.rs", Edition2024) }
+   0.155201720s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/thumbv8m.main-none-eabihf/debug/.fingerprint/lidar_driver-725bf249183f0941/test-lib-lidar_driver`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+   0.168211877s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint: fingerprint dirty for lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver)/Check { test: false }/TargetInner { name: "lidar_driver", tested: false, doc: true, ..: with_path("/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/bin/main.rs", Edition2024) }
+   0.168237623s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:     dirty: FsStatusOutdated(StaleDepFingerprint { unit: UnitIndex(2) })
+   0.168527873s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint: fingerprint error for lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver)/Check { test: true }/TargetInner { name: "lidar_driver", tested: false, doc: true, ..: with_path("/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/src/bin/main.rs", Edition2024) }
+   0.168539461s  INFO prepare_target{force=false package_id=lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver) target="lidar_driver"}: cargo::core::compiler::fingerprint:     err: failed to read `/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/thumbv8m.main-none-eabihf/debug/.fingerprint/lidar_driver-641a77e0cae09583/test-bin-lidar_driver`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: cargo_util::paths::read_bytes
+   1: cargo_util::paths::read
+   2: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   3: cargo::core::compiler::fingerprint::prepare_target
+   4: cargo::core::compiler::compile
+   5: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   6: cargo::ops::cargo_compile::compile_ws
+   7: cargo::ops::cargo_compile::compile_with_exec
+   8: cargo::ops::cargo_compile::compile
+   9: cargo::commands::check::exec
+  10: <cargo::cli::Exec>::exec
+  11: cargo::main
+  12: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  13: std::rt::lang_start::<()>::{closure#0}
+  14: <&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe as core::ops::function::FnOnce<()>>::call_once
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/core/src/ops/function.rs:287:21
+  15: std::panicking::catch_unwind::do_call::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  16: std::panicking::catch_unwind::<i32, &dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  17: std::panic::catch_unwind::<&dyn core::ops::function::Fn<(), Output = i32> + core::marker::Sync + core::panic::unwind_safe::RefUnwindSafe, i32>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  18: std::rt::lang_start_internal::{closure#0}
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:175:24
+  19: std::panicking::catch_unwind::do_call::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:581:40
+  20: std::panicking::catch_unwind::<isize, std::rt::lang_start_internal::{closure#0}>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panicking.rs:544:19
+  21: std::panic::catch_unwind::<std::rt::lang_start_internal::{closure#0}, isize>
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/panic.rs:359:14
+  22: std::rt::lang_start_internal
+             at /rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/std/src/rt.rs:171:5
+  23: main
+  24: <unknown>
+  25: __libc_start_main
+  26: <unknown>
+    Checking lidar_driver v0.1.0 (/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver)
+error: could not compile `lidar_driver` (lib test) due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `lidar_driver` (bin "lidar_driver" test) due to 1 previous error

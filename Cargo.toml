@@ -1,0 +1,16 @@
+[package]
+name = "lidar_driver"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "lidar_driver"
+path = "src/lib.rs"
+
+[[bin]]
+name = "lidar_driver"
+path = "src/bin/main.rs"
+test = false
+
+[dependencies]
+embedded-io-async = "0.7.0"

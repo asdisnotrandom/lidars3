@@ -1,0 +1,1 @@
+ErrorCasesLidar<<UART as ErrorType>::Error>: From<ErrorCasesLidar<ReadExactError<<UART as ErrorType>::Error>>>

@@ -1,0 +1,9 @@
+/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/debug/deps/embedded_io-014fa0e339b7f1df.d: /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/lib.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/mod.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_mut.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_ref.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/../README.md
+
+/home/asdisnotrandom/Masaüstü/rustrok/lidar_driver/target/debug/deps/libembedded_io-014fa0e339b7f1df.rmeta: /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/lib.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/mod.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_mut.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_ref.rs /home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/../README.md
+
+/home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/lib.rs:
+/home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/mod.rs:
+/home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_mut.rs:
+/home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/impls/slice_ref.rs:
+/home/asdisnotrandom/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embedded-io-0.7.1/src/../README.md:
