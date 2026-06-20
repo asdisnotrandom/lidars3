@@ -15,7 +15,6 @@ pub struct LidarData
 pub enum ErrorCasesLidar<E> 
 {
     UartReadError(ReadExactError<E>),
-    ChecksumError,
     SyncError,
 }
 
@@ -33,22 +32,30 @@ where UART: Read,
     }
     pub async fn read_new_data(&mut self) -> Result<LidarData, ErrorCasesLidar<UART::Error>>
     {
-        let mut buff = [0u8; 5];
-        self.uart.read_exact(&mut buff).await.map_err(ErrorCasesLidar::UartReadError)?;
-        self.parser_lidar(&buff)
+        let mut buff = [0u8; 1];
+        loop 
+        {
+            self.uart.read_exact(&mut buff).await.map_err(ErrorCasesLidar::UartReadError)?;
+            let start_flag = (buff[0] & 0x01) == 1;
+            let inverse_start = ((buff[0] >> 1) & 0x01) == 1;
+            let b0 = buff[0];
+            if start_flag != inverse_start
+            {
+                self.uart.read_exact(&mut buff).await.map_err(ErrorCasesLidar::UartReadError)?;
+                if (buff[0] & 0x01) == 1
+                {
+                    let mut rest = [0u8; 3];
+                    self.uart.read_exact(&mut rest).await.map_err(ErrorCasesLidar::UartReadError)?;
+                    let packet = [b0, buff[0], rest[0], rest[1], rest[2]];
+                    return self.parser_lidar(&packet);
+                }
+            }
+        }
     }
 
     fn parser_lidar(&self, packet: &[u8; 5]) -> Result<LidarData, ErrorCasesLidar<UART::Error>>
     {
         let start_flag = (packet[0] & 0x01) == 1;
-        let inverse_start = ((packet[0] >> 1) & 0x01) == 1;
-        if start_flag == inverse_start {
-            return Err(ErrorCasesLidar::SyncError);
-        }
-        if (packet[1] & 0x01) == 0 {
-            return Err(ErrorCasesLidar::ChecksumError);
-        }
-
         let quality = packet[0] >> 2;
         let angle_raw = ((packet[2] as u16) << 8) | (packet[1] as u16);
         let angle_dg = (angle_raw >> 1) as f32 / 64.0;
@@ -81,7 +88,11 @@ impl LidarMap
     pub fn update_points(&mut self, data: LidarData)
     {
         let index = ((data.angle_dg + 0.5) as usize) % 360;
-        self.points[index] = data;
+        if data.quality > self.points[index].quality
+        {
+            self.points[index] = data;
+        }
+
     }
     pub fn get_dist(&self, angle: usize) -> f32
     {

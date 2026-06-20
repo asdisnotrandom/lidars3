@@ -13,4 +13,11 @@ path = "src/bin/main.rs"
 test = false
 
 [dependencies]
+cortex-m-rt = "0.7.5"
+embassy-executor = { version = "0.10.0", features = ["platform-cortex-m", "executor-thread"] }
+embassy-rp = { version = "0.10.0", features = ["time-driver", "rp235xb"] }
+embassy-time = "0.5.1"
+embassy-usb = "0.6.0"
 embedded-io-async = "0.7.0"
+panic-probe = "1.0.0"
+static_cell = "2.1.1"
