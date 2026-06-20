@@ -94,6 +94,7 @@ impl LidarMap
         }
 
     }
+    //henuz kullanılmıyor. Optimizasyon için bu seçenek ya da farklı yollar tercih edilebilir.
     pub fn get_dist(&self, angle: usize) -> f32
     {
         let index = angle % 360;
