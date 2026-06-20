@@ -1,3 +1,0 @@
-cargo:rustc-link-search=/home/asdisnotrandom/Masaüstü/lidars3/target/thumbv8m.main-none-eabihf/debug/build/defmt-6934e7a26ae5cfe1/out
-cargo:rustc-check-cfg=cfg(c_variadic)
-cargo:rustc-check-cfg=cfg(no_cas)
